@@ -2,7 +2,7 @@
 
 
     function MainController($scope, $http) {
-        $scope.message = "DuckDuckGo Lookup";
+        $scope.message = "Github User Lookup";
 
         var onUserComplete = function(response){
             $scope.user = response.data;
@@ -13,11 +13,9 @@
         };
 
         $scope.search = function(username){
-            $http.get("http://api.duckduckgo.com/?q=" + username + "&format=json&pretty=1")
+            $http.get("https://api.github.com/users/" + username)
                 .then(onUserComplete, onError);
         };
-
-
     }
 
     angular.module("app", []).controller("MainController", ["$scope", "$http", MainController]);
