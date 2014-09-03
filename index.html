@@ -9,7 +9,7 @@
 <body>
 
 <div ng-controller="MainController">
-    <h1>{{message}}</h1>
+    <h1>GitHub API User Lookup Sample</h1>
 
     <div>{{error}}</div>
 
@@ -22,8 +22,8 @@
 
     <div>
         <div><img ng-src="{{user.avatar_url}}"></div>
-        <div>Name: {{user.name}}</div>
-        <div><a ng-href="{{user.html_url}}">User Profile</a></div>
+        <div ng-show="user.name">{{user.name}}</div>
+        <div ng-show="user.html_url"><a ng-href="{{user.html_url}}">User Profile</a></div>
     </div>
 
 </div>

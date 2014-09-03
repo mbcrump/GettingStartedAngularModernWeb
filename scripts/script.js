@@ -1,15 +1,12 @@
 (function(angular) {
-
-
     function MainController($scope, $http) {
-        $scope.message = "Github User Lookup";
 
         var onUserComplete = function(response){
             $scope.user = response.data;
         };
 
         var onError = function(reason){
-            $scope.error = "Could not reach the server";
+            $scope.error = "Could not reach the server!";
         };
 
         $scope.search = function(username){
