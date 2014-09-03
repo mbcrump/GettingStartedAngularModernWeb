@@ -2,7 +2,7 @@
 
 
     function MainController($scope, $http) {
-        $scope.message = "Github User Lookup";
+        $scope.message = "DuckDuckGo Lookup";
 
         var onUserComplete = function(response){
             $scope.user = response.data;
@@ -13,7 +13,7 @@
         };
 
         $scope.search = function(username){
-            $http.get("http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=m6gxza56e93phvnt7mw32jbg&q=" + username + "&page_limit=1")
+            $http.get("http://api.duckduckgo.com/?q=" + username + "&format=json&pretty=1")
                 .then(onUserComplete, onError);
         };
 
